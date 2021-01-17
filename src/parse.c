@@ -2805,7 +2805,7 @@ void get_standard_keysyms(void)
 
 void get_lock_fields(void)
 {
-	num_lock = modfield_from_keysym(Num_Lock);
+	num_lock = XCB_MOD_MASK_2;
 	caps_lock = XCB_MOD_MASK_LOCK;
 	scroll_lock = modfield_from_keysym(Scroll_Lock);
 	PRINTF("lock fields %u %u %u\n", num_lock, caps_lock, scroll_lock);

@@ -29,7 +29,7 @@
 #include <stdbool.h>
 #include "helpers.h"
 
-#define KEYSYMS_PER_KEYCODE  4
+#define KEYSYMS_PER_KEYCODE  6
 #define MOD_STATE_FIELD      255
 #define ESCAPE_KEYSYM        0xff1b
 #define SYNCHRONOUS_CHAR     ';'

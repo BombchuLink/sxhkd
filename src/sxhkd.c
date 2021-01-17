@@ -62,6 +62,7 @@ uint16_t scroll_lock;
 
 int main(int argc, char *argv[])
 {
+	printf("welcome to penis\n");
 	int opt;
 	char *fifo_path = NULL;
 	status_fifo = NULL;
@@ -228,7 +229,8 @@ void key_button_event(xcb_generic_event_t *evt, uint8_t event_type)
 	xcb_button_t button = XCB_NONE;
 	bool replay_event = false;
 	uint16_t modfield = 0;
-	uint16_t lockfield = num_lock | caps_lock | scroll_lock;
+	//mod2 and mod5 (num lock, and ISO_Level3_Shift by default) are ignored to allow access to more keysys
+	uint16_t lockfield = num_lock | caps_lock | scroll_lock | XCB_MOD_MASK_5 | XCB_MOD_MASK_2;
 	parse_event(evt, event_type, &keysym, &button, &modfield);
 	modfield &= ~lockfield & MOD_STATE_FIELD;
 	if (keysym != XCB_NO_SYMBOL || button != XCB_NONE) {
