@@ -62,7 +62,6 @@ uint16_t scroll_lock;
 
 int main(int argc, char *argv[])
 {
-	printf("welcome to penis\n");
 	int opt;
 	char *fifo_path = NULL;
 	status_fifo = NULL;
